@@ -18,7 +18,18 @@ function addCartElm(userId) {
         url: '../Includes/add-to-cart.php',
         data: data,
         success: function(response) {
-            console.log(response);
+            Swal.fire({
+                icon: 'success',
+                title: 'Product Added!',
+                text: 'The product has been added to your cart.',
+                showConfirmButton: true,
+                allowOutsideClick: false
+            }).then((result) => {
+                // Reload the page after the user clicks OK
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+            });
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);
@@ -37,8 +48,18 @@ function rmvItem(productName, userId) {
         url: '../Includes/remove-from-cart.php',
         data: data,
         success: function(response) {
-            console.log(response);
-            // Reload the page or update the cart display
+            Swal.fire({
+                icon: 'success',
+                title: 'Product Removed!',
+                text: 'The product has been Removed From your cart.',
+                showConfirmButton: true,
+                allowOutsideClick: false
+            }).then((result) => {
+                // Reload the page after the user clicks OK
+                if (result.isConfirmed) {
+                    location.reload();
+                }
+            });
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);
@@ -58,7 +79,7 @@ function checkout(userId, deliveryAddress) {
         data: data,
         success: function(response) {
             console.log(response);
-            // Redirect or display a success message
+            window.location.href = '../User pages/order_tracking.php';
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);
