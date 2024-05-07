@@ -20,8 +20,13 @@
                 $deliveryAddress = $_POST['delivery_address'];
 
                 // Insert into the order table
-                $stmt = $pdo->prepare("INSERT INTO orders (order_id, product_name, user_id, quantity, total_price, delivery_address) VALUES (?, ?, ?, ?, ?, ?)");
-                $stmt->execute([$orderId, $productName, $userId, $quantity, $totalPrice, $deliveryAddress]);
+                $stmt = $pdo->prepare("INSERT INTO orders (product_name, user_id, quantity, total_price, delivery_address) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$productName, $userId, $quantity, $totalPrice, $deliveryAddress]);
+
+                // Insert into the orderStatus table
+                $stmt = $pdo->prepare("INSERT INTO orderStatus (order_id, user_id) VALUES (?,?)");
+                $stmt->execute([$orderId, $userId]);
+                
             }
 
             // Clear the cart after checkout
