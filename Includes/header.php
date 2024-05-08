@@ -28,7 +28,7 @@ if ($userId) {
         <?php if ($userId) : ?>
             <a href="../User pages/review.php"><i class="fa-solid fa-pen-to-square" style="color: #ECF39E;"></i> Review</a>
             <a href="../User pages/wishlist.php"><i class="fa-solid fa-hand-holding-heart" style="color: #ECF39E;"></i> My Lists</a>
-            <a href="../User pages/order_tracking.php"><i class="fa-solid fa-truck-ramp-box" style="color: #ECF39E;"></i> Track My Order</a>
+            <a href="../User pages/order_tracking.html"><i class="fa-solid fa-truck-ramp-box" style="color: #ECF39E;"></i> Track My Order</a>
             <a href="../Includes/logout.inc.php"><i class="fa-solid fa-right-from-bracket" style="color: #ECF39E;"></i> Logout</a>
         <?php endif; ?>
         

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WFC E-MART Order Tracking</title>
-    <link rel="stylesheet" href="/CSS/order_tracking.css">
+    <link rel="stylesheet" href="../CSS/order_tracking.css">
 
     <!-- UniIcon CDN Link  -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -21,49 +21,43 @@
         <ul>
             <li>
                 <i class="icon uil uil-list-ui-alt"></i>
-                <div class="progress one">
+                <div class="progress selectItem">
                     <p>1</p>
-                    <?php echo $orderStatus['selectItem'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Select Item</p>
             </li>
             <li>
                 <i class="icon uil uil-file-check-alt"></i>
-                <div class="progress two">
+                <div class="progress confirmOrder">
                     <p>2</p>
-                    <?php echo $orderStatus['confirmOrder'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Confirm Order</p>
             </li>
             <li>
                 <i  class="icon uil uil-box"></i>
-                <div class="progress three">
+                <div class="progress Packing">
                     <p>3</p>
-                    <?php echo $orderStatus['packing'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Packing</p>
             </li>
             <li>
                 <i class="icon uil-truck" ></i>
-                <div class="progress four">
+                <div class="progress Shipping">
                     <p>4</p>
-                    <?php echo $orderStatus['shipping'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Shipping</p>
             </li>
             <li>
                 <i  class="icon uil uil-credit-card"></i>
-                <div class="progress five">
+                <div class="progress Payment">
                     <p>5</p>
-                    <?php echo $orderStatus['payment'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Payment</p>
             </li>
             <li>
                 <i class="icon uil uil-home"></i>
-                <div class="progress six">
+                <div class="progress Delivered">
                     <p>6</p>
-                    <?php echo $orderStatus['delivered'] ? '<i class="uil uil-check"></i>' : ''; ?>
                 </div>
                 <p class="text">Delivered</p>
             </li>
@@ -71,7 +65,7 @@
 
     </div>
 
-    <script src="/JavaScript/order_tracking.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JavaScript/order_tracking.js"></script>
 </body>
 </html>
-?>

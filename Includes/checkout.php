@@ -24,7 +24,7 @@
                 $stmt->execute([$productName, $userId, $quantity, $totalPrice, $deliveryAddress]);
 
                 // Insert into the orderStatus table
-                $stmt = $pdo->prepare("INSERT INTO orderStatus (order_id, user_id) VALUES (?,?)");
+                $stmt = $pdo->prepare("INSERT INTO orderStatus (order_id, user_id, selectItem, confirmOrder) VALUES (?,?,1,1)");
                 $stmt->execute([$orderId, $userId]);
                 
             }

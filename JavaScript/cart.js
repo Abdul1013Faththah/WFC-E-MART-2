@@ -79,7 +79,7 @@ function checkout(userId, deliveryAddress) {
         data: data,
         success: function(response) {
             console.log(response);
-            window.location.href = '../User pages/order_tracking.php';
+            window.location.href = '../User pages/order_tracking.html';
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);
