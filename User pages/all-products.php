@@ -82,7 +82,11 @@
                 <div class="box">
                     <div class="icons">
                         <a class="fas fa-shopping-cart"<?php echo $userId ? 'onclick="addCartElm(userId)"' : 'href="../User pages/signup.php"'; ?>></a>
-                        <a href="../User pages/wishlist.php" class="fas fa-heart"></a>
+                        <form action="../Includes/wishlist.inc.php" method="post" class="add-to-wishlist">
+                            <input type="hidden" name="product_id" value="<?php echo $product['product_id']; ?>">
+                            <input type="hidden" name="add_to_wishlist" value="1">
+                            <button type="submit" class="fas fa-heart"></button>
+                        </form>
                         <a href="../User pages/product.php" class="fas fa-eye"></a>
                     </div>
                     <div class="image">
