@@ -7,10 +7,11 @@ function updateOrderStatus() {
 
     $.ajax({
         type: 'POST',
-        url: '../Includes/update_order_status.php',
+        url: '../../Includes/update_order_status.php',
         data: { user_id: userId, progress: progress },
         success: function(response) {
             console.log(response);
+            window.location.href = '../product/products.php';
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);

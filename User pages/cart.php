@@ -122,6 +122,7 @@ if ($userId) {
                 const quantityInput = $(this).siblings('.quantity');
                 quantityInput.val(parseInt(quantityInput.val()) + 1);
                 quantityInput.trigger('change');
+                location.reload();
             });
 
             $('.decrement').on('click', function() {
@@ -129,6 +130,7 @@ if ($userId) {
                 if (parseInt(quantityInput.val()) > 1) {
                     quantityInput.val(parseInt(quantityInput.val()) - 1);
                     quantityInput.trigger('change');
+                    location.reload();
                 }
             });
         });

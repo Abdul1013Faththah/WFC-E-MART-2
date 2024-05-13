@@ -29,65 +29,65 @@
     </div>
 
     <style>
-body {
-    font-family: 'Arial', sans-serif;
-    background: #c2ffc8;
-    background-image: url();
-    margin: 0;
-    padding: 10px;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #c2ffc8;
+            background-image: url();
+            margin: 0;
+            padding: 10px;
+        }
 
-.controls {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    padding: 50px;
-    max-width: 300px;
-    margin: 30px auto;
-}
+        .controls {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+            padding: 50px;
+            max-width: 300px;
+            margin: 30px auto;
+        }
 
-label, input[type="checkbox"] {
-    cursor: pointer;
-}
+        label, input[type="checkbox"] {
+            cursor: pointer;
+        }
 
-input[type="text"], button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-button {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-button:hover {
-    background-color: #4cae4c;
-}
+        button:hover {
+            background-color: #4cae4c;
+        }
 
-@media (max-width: 768px) {
-    .controls {
-        width: 90%;
-        padding: 10px;
-    }
-}
+        @media (max-width: 768px) {
+            .controls {
+                width: 90%;
+                padding: 10px;
+            }
+        }
 
-@media (max-width: 480px) {
-    body {
-        padding: 5px;
-    }
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
 
-    .controls {
-        width: 100%;
-    }
-}
+            .controls {
+                width: 100%;
+            }
+        }
     </style>
 
-    <script src="../JavaScript/order_status.js"></script>
+<script src="../../JavaScript/order_status.js"></script>
 </body>
 </html>
