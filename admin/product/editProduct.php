@@ -4,8 +4,8 @@
 
   if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id =  $_GET["id"];
-    $sql = "SELECT * FROM `product` WHERE `product_id` = $id";
-    $result = mysqli_query($pdo, $sql);
+    $sql = "SELECT * FROM `products` WHERE `product_id` = $id";
+    $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
   }
   ?>
@@ -41,17 +41,17 @@
 
             <div class="form-group mb-15">
               <label for="txtProductName">Product Name</label>
-              <input type="text" name="txtProductName" id="txtProductName" value="<?php echo $row["name"]; ?>" required />
+              <input type="text" name="txtProductName" id="txtProductName" value="<?php echo $row["product_name"]; ?>" required />
             </div>
 
             <div class="form-group mb-15">
               <label for="imageFile">Image</label>
               <input type="file" name="imageFile" id="imageFile" class="mb-5">
               <?php
-              if ($row["image"]) {
-                $_SESSION["image"] = "../../../" . $row["image"];
-                $_SESSION["dbImage"] = $row["image"];
-                echo '<img src="../../../' . $row["image"] . '">';
+              if ($row["image_url"]) {
+                $_SESSION["image_url"] = "../../../" . $row["image_url"];
+                $_SESSION["dbImage"] = $row["image_url"];
+                echo '<img src="' . $row["image_url"] . '">';
               }
               ?>
             </div>
@@ -61,9 +61,9 @@
               <select name="txtBrandId" id="txtBrandId" required>
                 <?php
                 $sql = "SELECT * FROM `brand`";
-                $result = mysqli_query($pdo, $sql);
+                $result = mysqli_query($conn, $sql);
                 while ($rows = mysqli_fetch_assoc($result)) {
-                  if ($rows['brand_id'] == $row["brand_id"]) {
+                  if ($rows['brand'] == $row["brand"]) {
                     echo '<option selected value="' . $rows['brand_id'] . '">' . $rows['name'] . '</option>';
                   }
                   if ($rows['brand_id'] != $row["brand_id"]) {
@@ -79,7 +79,7 @@
               <select name="txtCategoryId" id="txtCategoryId" required>
                 <?php
                 $sql = "SELECT * FROM `category`";
-                $result = mysqli_query($pdo, $sql);
+                $result = mysqli_query($conn, $sql);
                 while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
                   <option value="<?php echo $rows['category_id']; ?>"><?php echo $rows['name']; ?></option>
@@ -91,7 +91,7 @@
 
             <div class="form-group mb-15">
               <label for="txtsubCategoryId">Sub Category</label>
-              <input type="text" name="txtsubCategoryId" id="txtsubCategoryId" value="<?php echo $row["subCategory"]; ?>" required />
+              <input type="text" name="txtsubCategoryId" id="txtsubCategoryId" value="<?php echo $row["subcategory"]; ?>" required />
             </div>
 
             <div class="form-group mb-15">
@@ -101,12 +101,12 @@
 
             <div class="form-group mb-15">
               <label for="txtQuantity">Quantity</label>
-              <input type="number" name="txtQuantity" id="txtQuantity" value="<?php echo $row["quantity"]; ?>" required />
+              <input type="number" name="txtQuantity" id="txtQuantity" value="<?php echo $row["stock_quantity"]; ?>" required />
             </div>
 
             <div class="form-group mb-15">
               <label for="txtUnitPrice">Unit Price</label>
-              <input type="text" name="txtUnitPrice" id="txtUnitPrice" value="<?php echo $row["unit_price"]; ?>" required />
+              <input type="text" name="txtUnitPrice" id="txtUnitPrice" value="<?php echo $row["price"]; ?>" required />
             </div>
 
 
@@ -122,4 +122,4 @@
 
   </html>
 
-  <?php mysqli_close($pdo); ?>
+  <?php mysqli_close($conn); ?>

@@ -4,11 +4,11 @@
   if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id =  $_GET["id"];
     $sql = "SELECT * FROM `category` WHERE `category_id` = $id";
-    $result = mysqli_query($pdo, $sql);
+    $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
   }
 
-  mysqli_close($pdo);
+  mysqli_close($conn);
   ?>
 
 

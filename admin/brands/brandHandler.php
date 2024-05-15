@@ -14,8 +14,8 @@ if (isset($_POST["createBrandBtn"])) {
   
   $sql = "INSERT INTO `brand` (`name`) VALUES ('$brandName');";
   
-  if (!mysqli_query($pdo, $sql)) {
-    func_alert("Unable to insert a new brand: " . mysqli_error($e));
+  if (!mysqli_query($conn, $sql)) {
+    func_alert("Unable to insert a new brand: " . mysqli_error($conn));
   } else {
     func_alert("Brand Added Successfully!!!");
   }
@@ -27,8 +27,8 @@ if (isset($_POST["editBrandBtn"])) {
  
   $sql = "UPDATE `brand` SET `name` = '$brandName' WHERE `brand_id` = $id";
  
-  if (!mysqli_query($pdo, $sql)) {
-    func_alert("Unable to update brand: " . mysqli_error($e));
+  if (!mysqli_query($conn, $sql)) {
+    func_alert("Unable to update brand: " . mysqli_error($conn));
   } else {
     func_alert("Brand Updated Successfully!!!");
   }
@@ -39,13 +39,13 @@ if (isset($_GET['delete'])) {
   
   $sql = "DELETE FROM `brand` WHERE `brand_id` = $id";
   
-  if (!mysqli_query($pdo, $sql)) {
-    func_alert("Unable to delete brand: " . mysqli_error($e));
+  if (!mysqli_query($conn, $sql)) {
+    func_alert("Unable to delete brand: " . mysqli_error($conn));
   } else {
     func_alert("Brand Deleted Successfully!!!");
   }
 }
 
-mysqli_close($pdo);
+mysqli_close($conn);
 
 ?>

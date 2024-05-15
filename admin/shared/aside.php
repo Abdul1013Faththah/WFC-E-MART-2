@@ -1,14 +1,14 @@
 <aside class="sidebar">
   <div class="logo-details">
     <a href="#"><i class='bx bx-store-alt'></i></a>
-    <a href="#"><span class="logo-name">WFC E-mart</span></a>
+    <a href="#"><span class="logo-name">WFC E-Mart</span></a>
   </div>
 
   <ul class="nav-links">
     <li>
       <a href="../order/order_status_controller.php" class="<?php echo ($page == "orders" ? "active" : "") ?>">
         <i class="bx bx-list-ul"></i>
-        <span class="links-name">Orders Tracking updater</span>
+        <span class="links-name">Orders</span>
       </a>
     </li>
 
@@ -41,7 +41,8 @@
     </li>
     <li class="log-out">
       <a href="#">
-        <span class="links-name"></span>
+        <i class="bx bx-log-out"></i>
+        <span class="links-name">Log out</span>
       </a>
     </li>
   </ul>

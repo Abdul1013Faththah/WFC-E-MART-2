@@ -24,16 +24,16 @@ if (isset($_POST["createProductBtn"])) {
     $SubcategoryId = $_POST["txtsubCategoryId"];
     $unit = $_POST["txtunit"];
 
-    $sql = "INSERT INTO `product` (`name`,`image`, `quantity`, `unit_price`, `brand_id`, `category_id`, `subCategory`, `unit`) 
+    $sql = "INSERT INTO `products` (`product_name`,`image_url`, `stock_quantity`, `price`, `brand`, `category`, `subCategory`, `unit`) 
           VALUES ('$productName', '$image', '$quantity', '$unitPrice', '$brandId', '$categoryId', '$SubcategoryId', '$unit');";
 
-    if (!mysqli_query($pdo, $sql)) {
-      func_alert("Unable to insert a new product: " . mysqli_error($e));
+    if (!mysqli_query($conn, $sql)) {
+      func_alert("Unable to insert a new product: " . mysqli_error($conn));
     } else {
       func_alert("Product Added Successfully!!!");
     }
   } else {
-    func_alert("Unable insert a product image: " . mysqli_error($e));
+    func_alert("Unable insert a product image: " . mysqli_error($conn));
   }
 }
 
@@ -57,11 +57,11 @@ if (isset($_POST["editProductBtn"])) {
     move_uploaded_file($_FILES["imageFile"]["tmp_name"], $image);
   }
 
-  $sql = "UPDATE `product` SET `name` = '$productName', `image` = '$dbImage',
-   `quantity` = '$quantity', `unit_price` = '$unitPrice', `brand_id` = '$brandId', `category_id` = '$categoryId', `subCategory` = '$SubcategoryId', `unit` = '$unit' WHERE `product_id` = $id";
+  $sql = "UPDATE `products` SET `product_name` = '$productName', `image_url` = '$dbImage',
+   `stock_quantity` = '$quantity', `price` = '$unitPrice', `brand` = '$brandId', `category` = '$categoryId', `subCategory` = '$SubcategoryId', `unit` = '$unit' WHERE `product_id` = $id";
 
-  if (!mysqli_query($pdo, $sql)) {
-    func_alert("Unable update product: " . mysqli_error($e));
+  if (!mysqli_query($conn, $sql)) {
+    func_alert("Unable update product: " . mysqli_error($conn));
   } else {
     func_alert("Product Updated Successfully!!!");
   }
@@ -70,13 +70,13 @@ if (isset($_POST["editProductBtn"])) {
 if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
 
-  $sql = "DELETE FROM `product` WHERE `product_id` = $id";
+  $sql = "DELETE FROM `products` WHERE `product_id` = $id";
 
-  if (!mysqli_query($pdo, $sql)) {
-    func_alert("Unable to delete product: " . mysqli_error($e));
+  if (!mysqli_query($conn, $sql)) {
+    func_alert("Unable to delete product: " . mysqli_error($conn));
   } else {
     func_alert("Product Deleted Successfully!!!");
   }
 }
 
-mysqli_close($pdo);
+mysqli_close($conn);

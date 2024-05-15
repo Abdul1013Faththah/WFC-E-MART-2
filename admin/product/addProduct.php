@@ -41,7 +41,7 @@
              <select name="txtBrandId" id="txtBrandId" required>
                <?php
                 $sql = "SELECT * FROM `brand`";
-                $result = mysqli_query($pdo, $sql);
+                $result = mysqli_query($conn, $sql);
                 while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
                  <option value="<?php echo $rows['brand_id']; ?>"><?php echo $rows['name']; ?></option>
@@ -56,7 +56,7 @@
              <select name="txtCategoryId" id="txtCategoryId" required>
                <?php
                 $sql = "SELECT * FROM `category`";
-                $result = mysqli_query($pdo, $sql);
+                $result = mysqli_query($conn, $sql);
                 while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
                  <option value="<?php echo $rows['category_id']; ?>"><?php echo $rows['name']; ?></option>
@@ -71,7 +71,7 @@
              <select name="txtsubCategoryId" id="txtsubCategoryId" required>
                <?php
                 $sql = "SELECT * FROM `category`";
-                $result = mysqli_query($pdo, $sql);
+                $result = mysqli_query($conn, $sql);
                 while ($rows = mysqli_fetch_assoc($result)) {
                 ?>
                  <option value="<?php echo $rows['category_id']; ?>"><?php echo $rows['subCategory']; ?></option>

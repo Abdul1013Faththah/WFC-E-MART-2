@@ -27,7 +27,7 @@ include("../shared/head.php");
       include_once '../database.php';
 
       $sql = "SELECT * FROM `brand` ORDER BY `brand_id`";
-      $result = mysqli_query($pdo, $sql);
+      $result = mysqli_query($conn, $sql);
 
       if ($result) {
         if (mysqli_num_rows($result) > 0) {
@@ -62,7 +62,7 @@ include("../shared/head.php");
         echo "<p>Oops! Something went wrong. Please try again later.</p>";
       }
 
-      mysqli_close($pdo);
+      mysqli_close($conn);
       ?>
     </div>
   </section>

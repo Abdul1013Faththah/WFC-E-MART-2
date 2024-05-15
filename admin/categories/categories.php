@@ -28,7 +28,7 @@ include("../shared/head.php");
 
       $limit = 5;
       $sql = "SELECT * FROM category";
-      $result = mysqli_query($pdo, $sql);
+      $result = mysqli_query($conn, $sql);
       $total_rows = mysqli_num_rows($result);
       $total_pages = ceil($total_rows / $limit);
 
@@ -52,7 +52,7 @@ include("../shared/head.php");
       echo "</thead>";
       echo "<tbody>";
 
-      if ($result = mysqli_query($pdo, $getQuery)) {
+      if ($result = mysqli_query($conn, $getQuery)) {
         if (mysqli_num_rows($result) > 0) {
 
           while ($row = mysqli_fetch_array($result)) {
@@ -94,7 +94,7 @@ include("../shared/head.php");
       echo "</tbody>";
       echo "</table>";
 
-      mysqli_close($pdo);
+      mysqli_close($conn);
       ?>
     </div>
   </section>

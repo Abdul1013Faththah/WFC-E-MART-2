@@ -27,8 +27,8 @@ include("../shared/head.php");
       <?php
       include_once '../database.php';
 
-      $sql = "SELECT * FROM `product`";
-      $result = mysqli_query($pdo, $sql);
+      $sql = "SELECT * FROM `products`";
+      $result = mysqli_query($conn, $sql);
 
       echo '<table>';
       echo "<thead>";
@@ -50,11 +50,11 @@ include("../shared/head.php");
           while ($row = mysqli_fetch_array($result)) {
             echo "<tr>";
             echo "<td>" . $row['product_id'] . "</td>";
-            echo "<td>" . $row['name'] . "</td>";
-            echo "<td><img src='" . $row['image'] . "' width='100' height='100' /></td>";
-            echo "<td>" . $row['quantity'] . "</td>";
+            echo "<td>" . $row['product_name'] . "</td>";
+            echo "<td><img src='" . $row['image_url'] . "' width='100' height='100' /></td>";
+            echo "<td>" . $row['stock_quantity'] . "</td>";
             echo "<td>" . $row['unit'] . "</td>";
-            echo "<td> Rs. " . $row['unit_price'] . "</td>";
+            echo "<td> Rs. " . $row['price'] . "</td>";
             echo '<td class="text-center">
             <a href="editProduct.php?id=' . $row["product_id"] . '" class="custom-btn-outline">Edit</a>
             <span class="mx-5"></span>
@@ -79,7 +79,7 @@ include("../shared/head.php");
       echo "</tbody>";
       echo "</table>";
 
-      mysqli_close($pdo);
+      mysqli_close($conn);
       ?>
     </div>
   </section>
