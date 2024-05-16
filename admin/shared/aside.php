@@ -32,9 +32,15 @@
       </a>
     </li>
     <li>
-      <a href="#" class="<?php echo ($page == "users" ? "active" : "") ?>">
+      <a href="../users/users.php" class="<?php echo ($page == "users" ? "active" : "") ?>">
         <i class='bx bx-group'></i>
         <span class="links-name">Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="../order/orders_received.php" class="<?php echo ($page == "users" ? "active" : "") ?>">
+        <i class='bx bx-group'></i>
+        <span class="links-name">Orders Received</span>
       </a>
     </li>
 

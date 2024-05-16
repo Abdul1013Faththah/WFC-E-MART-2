@@ -12,8 +12,8 @@ function func_alert($message)
 
 if (isset($_POST["createProductBtn"])) {
   $date = date_create();
-  $dbimage = "uploads/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
-  $image = "../uploads/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
+  $dbimage = "../Images/Products/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
+  $image = "../../Images/Products/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
 
   if (move_uploaded_file($_FILES["imageFile"]["tmp_name"], $image)) {
     $productName = $_POST["txtProductName"];
@@ -25,7 +25,7 @@ if (isset($_POST["createProductBtn"])) {
     $unit = $_POST["txtunit"];
 
     $sql = "INSERT INTO `products` (`product_name`,`image_url`, `stock_quantity`, `price`, `brand`, `category`, `subCategory`, `unit`) 
-          VALUES ('$productName', '$image', '$quantity', '$unitPrice', '$brandId', '$categoryId', '$SubcategoryId', '$unit');";
+          VALUES ('$productName', '$dbimage', '$quantity', '$price', '$brandId', '$categoryId', '$SubcategoryId', '$unit');";
 
     if (!mysqli_query($conn, $sql)) {
       func_alert("Unable to insert a new product: " . mysqli_error($conn));
@@ -52,8 +52,8 @@ if (isset($_POST["editProductBtn"])) {
     $dbImage = $_SESSION["dbImage"];
   } else {
     $date = date_create();
-    $image = "../uploads/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
-    $dbImage = "../uploads/" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
+    $dbimage = "../Images/Products" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
+    $image = "../../Images/Products" . date_timestamp_get($date) . "-" . basename($_FILES["imageFile"]["name"]);
     move_uploaded_file($_FILES["imageFile"]["tmp_name"], $image);
   }
 

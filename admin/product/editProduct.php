@@ -90,9 +90,19 @@
             </div>
 
             <div class="form-group mb-15">
-              <label for="txtsubCategoryId">Sub Category</label>
-              <input type="text" name="txtsubCategoryId" id="txtsubCategoryId" value="<?php echo $row["subcategory"]; ?>" required />
-            </div>
+             <label for="txtsubCategoryId">Sub Category</label>
+             <select name="txtsubCategoryId" id="txtsubCategoryId" required>
+               <?php
+                $sql = "SELECT * FROM `category`";
+                $result = mysqli_query($conn, $sql);
+                while ($rows = mysqli_fetch_assoc($result)) {
+                ?>
+                 <option value="<?php echo $rows['category_id']; ?>"><?php echo $rows['subCategory']; ?></option>
+               <?php
+                }
+                ?>
+             </select>
+           </div>
 
             <div class="form-group mb-15">
               <label for="txtunit">Unit</label>
