@@ -6,27 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Bar Controller</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
+<?php
+$pageTitle = "Order Status";
+include("../shared/head.php");
+?>
 <body>
-    <div class="controls">
-        <label for="userId">User ID:</label>
-        <input type="text" id="userId" name="userId">
-        <form onsubmit="updateOrderStatus(); return false;">
-            <input type="checkbox" id="selectItem" name="progress[]" value="selectItem">
-            <label for="selectItem">Select Item</label><br>
-            <input type="checkbox" id="confirmOrder" name="progress[]" value="confirmOrder">
-            <label for="confirmOrder">Confirm Order</label><br>
-            <input type="checkbox" id="packing" name="progress[]" value="packing">
-            <label for="packing">Packing</label><br>
-            <input type="checkbox" id="shipping" name="progress[]" value="shipping">
-            <label for="shipping">Shipping</label><br>
-            <input type="checkbox" id="payment" name="progress[]" value="payment">
-            <label for="payment">Payment</label><br>
-            <input type="checkbox" id="delivered" name="progress[]" value="delivered">
-            <label for="delivered">Delivered</label><br>
-            <button type="submit">Update Status</button>
-        </form>
+
+<?php
+  $page = "Order Status";
+  include("../shared/aside.php");
+  ?>
+
+  <section class="page-wrapper">
+
+    <?php
+    $title = "Order Status";
+
+    include("../shared/nav.php");
+    ?>
+
+    <div class="page-content px-25">
+        <div class="controls">
+            <label for="userId">User ID:</label>
+            <input type="text" id="userId" name="userId">
+            <form onsubmit="updateOrderStatus(); return false;">
+                <input type="checkbox" id="selectItem" name="progress[]" value="selectItem">
+                <label for="selectItem">Select Item</label><br>
+                <input type="checkbox" id="confirmOrder" name="progress[]" value="confirmOrder">
+                <label for="confirmOrder">Confirm Order</label><br>
+                <input type="checkbox" id="packing" name="progress[]" value="packing">
+                <label for="packing">Packing</label><br>
+                <input type="checkbox" id="shipping" name="progress[]" value="shipping">
+                <label for="shipping">Shipping</label><br>
+                <input type="checkbox" id="payment" name="progress[]" value="payment">
+                <label for="payment">Payment</label><br>
+                <input type="checkbox" id="delivered" name="progress[]" value="delivered">
+                <label for="delivered">Delivered</label><br>
+                <button type="submit">Update Status</button>
+            </form>
+        </div>
     </div>
+  </section>
 
     <style>
         body {

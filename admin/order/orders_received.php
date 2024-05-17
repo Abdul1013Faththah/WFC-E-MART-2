@@ -2,21 +2,21 @@
 <html lang="en">
 
 <?php
-$pageTitle = "Products";
+$pageTitle = "Orders Received";
 include("../shared/head.php");
 ?>
 
 <body>
 
   <?php
-  $page = "products";
+  $page = "Orders Received";
   include("../shared/aside.php");
   ?>
 
   <section class="page-wrapper">
 
     <?php
-    $title = "Products";
+    $title = "Orders Received";
 
     include("../shared/nav.php");
     ?>

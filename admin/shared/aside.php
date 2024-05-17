@@ -8,7 +8,7 @@
     <li>
       <a href="../order/order_status_controller.php" class="<?php echo ($page == "orders" ? "active" : "") ?>">
         <i class="bx bx-list-ul"></i>
-        <span class="links-name">Orders</span>
+        <span class="links-name">Orders Status</span>
       </a>
     </li>
 

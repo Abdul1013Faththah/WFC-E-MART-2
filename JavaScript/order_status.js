@@ -10,8 +10,18 @@ function updateOrderStatus() {
         url: '../../Includes/update_order_status.php',
         data: { user_id: userId, progress: progress },
         success: function(response) {
-            console.log(response);
-            window.location.href = '../product/products.php';
+            Swal.fire({
+                icon: 'success',
+                title: 'Status Updated!',
+                text: 'Status updated success.',
+                showConfirmButton: true,
+                allowOutsideClick: false
+            }).then((result) => {
+                // Reload the page after the user clicks OK
+                if (result.isConfirmed) {
+                    window.location.href = '../product/products.php';
+                }
+            });
         },
         error: function(xhr, status, error) {
             console.error(xhr, status, error);
