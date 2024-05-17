@@ -43,6 +43,12 @@
         <span class="links-name">Orders Received</span>
       </a>
     </li>
+    <li>
+      <a href="../wishlist/wishlist.php" class="<?php echo ($page == "users" ? "active" : "") ?>">
+        <i class='bx bx-group'></i>
+        <span class="links-name">Wishlist of Users</span>
+      </a>
+    </li>
 
     </li>
     <li class="log-out">
